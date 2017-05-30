@@ -9,6 +9,11 @@ class NewSessionScreen extends Component{
   title: 'New Session'
   }
 
+  constructor(props) {
+    super(props);
+    this.state = { text: 'Useless Placeholder' };
+  }
+
   render(){
     return(
       <View>
@@ -18,6 +23,8 @@ class NewSessionScreen extends Component{
           <Text> Name </Text>
           <TextInput
           style={{height: 40, width: 200, borderColor: 'red', borderWidth: 1}}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
           />
         </CardSection>
 
@@ -35,7 +42,7 @@ class NewSessionScreen extends Component{
           />
         </CardSection>
 
-        <Button onPress={() => this.props.navigation.navigate('Session')}
+        <Button onPress={() => this.props.navigation.navigate('Home')}
         title='Submit New Session'></Button>
 
       </View>
