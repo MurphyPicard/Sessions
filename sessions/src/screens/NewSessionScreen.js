@@ -1,7 +1,6 @@
 import  React, { Component } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
-import { CardSection, Card } from '../components/common'
-
+import { CardSection, Card } from '../components/common';
 
 
 class NewSessionScreen extends Component{
@@ -11,7 +10,11 @@ class NewSessionScreen extends Component{
 
   constructor(props) {
     super(props);
-    this.state = { text: 'Useless Placeholder' };
+    this.state = { textName: "What is the session name?",
+                   textTime: "What is the date and time?",
+                   textLocation: "Where will we meet?"
+
+                  };
   }
 
   render(){
@@ -22,23 +25,27 @@ class NewSessionScreen extends Component{
         <CardSection>
           <Text> Name </Text>
           <TextInput
-          style={{height: 40, width: 200, borderColor: 'red', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
+          style={{height: 40, width: 200, borderColor: 'black', borderWidth: 1}}
+          onChangeText={(textName) => this.setState({textName})}
+          value={this.state.textName}
           />
         </CardSection>
 
         <CardSection>
           <Text> Time </Text>
           <TextInput
-          style={{height: 40, width: 200, borderColor: 'red', borderWidth: 1}}
+          style={{height: 40, width: 200, borderColor: 'black', borderWidth: 1}}
+          onChangeText={(textTime) => this.setState({textTime})}
+          value={this.state.textTime}
           />
         </CardSection>
 
         <CardSection>
           <Text> Location </Text>
           <TextInput
-          style={{height: 40, width: 200, borderColor: 'red', borderWidth: 1}}
+          style={{height: 40, width: 200, borderColor: 'black', borderWidth: 1}}
+          onChangeText={(textLocation) => this.setState({textLocation})}
+          value={this.state.textLocation}
           />
         </CardSection>
 
